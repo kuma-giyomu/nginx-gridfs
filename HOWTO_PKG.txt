@@ -1,0 +1,21 @@
+Quick Notes
+
+# how to clone, setup and create a tar.gz suitable for unpacking into a nginx build tree
+
+git clone https://github.com/petersen-poul/nginx-gridfs.git
+cd nginx-gridfs
+git submodule init
+git submodule update
+cd ..
+tar cvzf /tmp/nginx-gridfs.tar.gz nginx-gridfs --exclude='.git*' 
+
+# how to update mongo-c-driver to latest master
+
+cd nginx-gridfs/mongo-c-driver
+git fetch
+git checkout master
+git pull
+cd ..
+git diff 
+git commit -am "Updating the mongo-c-driver to latest master" 
+
